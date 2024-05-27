@@ -1,5 +1,6 @@
 const express = require('express');
 const { spawn } = require('child_process');
+const path = require('path');
 
 let global = ["head"];
 
@@ -32,7 +33,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.sendFile();
+    res.sendFile(path.join(__dirname, "index.html"));
 })
 
 app.get('/movies/:movieName', async (req, res) => {

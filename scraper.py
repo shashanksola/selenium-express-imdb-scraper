@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import sys
+import json
 
 driver = webdriver.Chrome()
 req = str(sys.argv[1])
@@ -35,4 +36,4 @@ for movie, movie_plot_link in top_related_movies:
     movie_short_plots.append((movie, summaries[0].text))
     movie_long_plots.append((movie, summaries[1].text))
 
-print(movie_short_plots)
+print(json.dumps(movie_short_plots))

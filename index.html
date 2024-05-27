@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDB Scaper</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1>Get IMDB Movie Summaries</h1>
+        <input id="movieName" placeholder="Movie Title" />
+
+        <a id="summary"><button>Get Summary</button></a>
+    </div>
+    <script>
+        let inputElement = document.getElementById("movieName");
+        let anchorTag = document.getElementById("summary");
+        inputElement.addEventListener('change', (e) => {
+            // Log the input value to the console
+            console.log(e.target.value);
+            // Update the href attribute of the anchor tag
+            anchorTag.setAttribute('href', 'http://localhost:3000/movies/' + e.target.value);
+        });
+    </script>
+</body>
+
+</html>
